@@ -1,0 +1,17 @@
+{
+    "rules":
+    [
+        {   //侧边栏字体大小
+            "class": "sidebar_label",
+            "font.size": 14
+        },
+//        {   //侧边栏行间距
+//            "class": "sidebar_tree",
+//            "row_padding": [16, 3, 4, 3],
+//        },
+//        {   //修改文档标题字体大小
+//            "class": "tab_label",
+//            "font.size": 14
+//        },
+    ]
+}

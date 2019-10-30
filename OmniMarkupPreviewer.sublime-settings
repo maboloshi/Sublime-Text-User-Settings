@@ -1,0 +1,6 @@
+{
+    "renderer_options-MarkdownRenderer": {
+//        "extensions": ["attr_list", "footnotes", "meta", "toc", "tables", "fenced_code", "codehilite","strikeout"]
+        "extensions": ["attr_list", "footnotes", "meta", "toc", "tables", "fenced_code", "codehilite"]
+    }
+}

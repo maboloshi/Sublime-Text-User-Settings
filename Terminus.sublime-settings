@@ -1,0 +1,42 @@
+{
+	"shell_configs": [
+        {
+            "name": "Zsh",
+            "cmd": ["zsh", "-i", "-l"],
+            "env": {},
+            "enable": true,
+            "default": false,
+            "platforms": ["linux", "osx"]
+        },
+	],
+	"unix_lang": "zh_CN.UTF-8",
+	"theme": "user",
+	// Flatland.itermcolors 导入
+	"user_theme_colors": {
+        "background": "#25282b",
+        "foreground": "#c4e2f2",
+        "caret": "#839495",
+        "selection": "#383730",
+        "selection_foreground": "#fefffe",
+        "00": "#262621",  // black
+        "01": "#f69547",  // red
+        "02": "#add876",  // green
+        "03": "#f6f080",  // brown
+        "04": "#60a7ca",  // blue
+        "05": "#7d72c7",  // magenta
+        "06": "#e05177",  // cyan
+        "07": "#fefffe",  // white
+        "08": "#262621",  // light_black
+        "09": "#dc402f",  // light_red
+        "10": "#b4d839",  // light_green
+        "11": "#ff9c5a",  // light_brown
+        "12": "#71c4d9",  // light_blue
+        "13": "#7d72c7",  // light_magenta
+        "14": "#e05177",  // light_cyan
+        "15": "#fefffe"   // light_white
+	},
+	"view_settings": {
+		"font_face": "Roboto Mono for Powerline",
+		"font_size": 15
+	}
+}

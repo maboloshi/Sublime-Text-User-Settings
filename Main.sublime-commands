@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "Markdown: Open with ine.app",
+        "command": "open_markdown_file"
+    }
+]

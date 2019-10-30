@@ -1,0 +1,75 @@
+{
+// ------------------------------------------------------------------
+// 平台设置:
+// ------------------------------------------------------------------
+    "osx":  {
+        // Path used when invoking tex & friends; MUST include $PATH
+        // "texpath" : "$PATH:/Library/TeX/texbin:/usr/texbin:/usr/local/bin:/opt/local/bin"
+        // miktex: 个人优先全局
+        // "texpath" : "/Users/maboloshi/bin"
+        "texpath" : "$PATH:$HOME/bin"
+        // texlive 
+        //"texpath" : "/Library/TeX/texbin"
+        // Path to PDF viewer, if needed
+        // TODO think about it. Also, maybe configure it here!
+    },
+    "windows": {
+        // Path used when invoking tex & friends; "" is fine for MiKTeX
+        // For TeXlive 2011 (or other years) use
+        //"texpath" : "E:\\texlive\\2016\\bin\\win32;$PATH",
+         "texpath" : "E:\\MiKTeX\\texmfs\\install\\miktex\\bin;$PATH",
+        // TeX distro: "miktex" or "texlive"
+        //"distro" : "texlive",
+        "distro" : "miktex",
+        // Command to invoke Sumatra. If blank, "SumatraPDF.exe" is used (it has to be on your PATH)
+        "sumatra": "D:\\App\\WinEdt 10.3\\Local\\Plugins\\SumatraPDF\\SumatraPDF.exe",
+        // Command to invoke Sublime Text. Used if the keep_focus toggle is true.
+        // If blank, "subl.exe" or "sublime_text.exe" will be used.
+        "sublime_executable": "",
+        // how long (in seconds) to wait after the jump_to_pdf command completes
+        // before switching focus back to Sublime Text. This may need to be
+        // adjusted depending on your machine and configuration.
+        "keep_focus_delay": 0.5
+    },
+
+// ------------------------------------------------------------------
+// 输出目录设置:
+// ------------------------------------------------------------------
+    "aux_directory": "<<temp>>",
+    // 指定辅助文件夹
+    // ""               不使用
+    //
+    // path             指定绝对路径或相对于主tex文件路径
+    //
+    // "<<temp>>"       由ST创建临时文件夹, 在ST重启后自动删除
+    //
+    // "<<project>>"    在主tex文件同一目录中创建辅助文件夹;名称为主文件绝对路径的MD5值;不会主动删除
+    //
+    // "<<cache>>"      ST3在ST缓存目录中创建辅助文件夹,不会主动删除,不会与主tex文件位于同一目录中;
+    //
+    // 注意: 此处为全局设定,会覆盖 tex 文件中％!TEX指令
+    "output_directory": "<<temp>>",
+    // 指定输出文件夹
+    // 值与辅助文件夹描述类似
+
+    "jobname": "",
+    // 指定构建文档时要使用的作业名
+
+    "copy_output_on_build": "true",
+    // 指定是否将最终PDF文件复制到与主tex文件相同的文件夹中;如果为空，且已设置"output_directory"或tex 文件中％!TEX指令设置, 它将被复制到与主tex文件相同的文件夹中的文件扩展名列表;
+// ------------------------------------------------------------------
+// 构建引擎设置:
+// ------------------------------------------------------------------
+    "builder": "",
+    "builder_settings" : {
+        "display_log": "true",
+        "command" : "xelatex -synctex=1 -enable-write18 -interaction=nonstopmode -aux-directory=tmp",
+//         
+//        "windows" : {
+            //"options": ["--shell-escape"],
+//        },
+//        "osx" : {
+//            "command" : "xelatex -synctex=1 -enable-write18 -interaction=nonstopmode -aux-directory=tmp",// See README or third-party documentation
+//        },
+    },
+}

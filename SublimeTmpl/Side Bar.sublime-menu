@@ -1,0 +1,17 @@
+[
+    {
+        "id": "sublimetmpl",
+        "caption": "新建文件(模板)",
+        "children":
+        [
+            /*下面这段是为hexo模版添加的*/
+            {
+                "caption": "Hexo 文章",
+                "command": "sublime_tmpl",
+                "args": {
+                    "type": "hexo_art"
+                }
+            },
+        ]
+    }
+]

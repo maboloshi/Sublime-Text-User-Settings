@@ -1,0 +1,13 @@
+{
+    "disabled_keymap_actions": "all" ,//关闭所有语法快捷键
+    //"date_format" : "%Y-%m-%d %H:%M:%S",
+    "attr": {
+        "author": "Your Name",
+        "email": "you@example.org",
+        "link": "http://example.org"
+    },
+    "hexo_art": {
+        "syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.sublime-syntax"
+        ,"extension": "md"
+    }
+}

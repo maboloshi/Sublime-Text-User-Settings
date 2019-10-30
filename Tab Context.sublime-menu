@@ -1,0 +1,3 @@
+[
+	{ "command": "side_bar_copy_name", "caption": "复制文件名" }, //命令由SideBarEnhancements插件提供
+]

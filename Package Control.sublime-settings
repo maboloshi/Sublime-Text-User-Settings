@@ -1,0 +1,42 @@
+{
+	"bootstrapped": true,
+	"http_proxy": "http://127.0.0.1:1087",
+	"https_proxy": "http://127.0.0.1:1087",
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ChannelRepositoryTools",
+		"ChineseLocalizations",
+		"Codecs33",
+		"Compare Side-By-Side",
+		"ConvertToUTF8",
+		"CustomizeMarkdownEditor",
+		"DiffTabs",
+		"GitLink",
+		"HaoGist",
+		"HTML-CSS-JS Prettify",
+		"Inline Google Translate",
+		"LaTeXTools",
+		"LineEndings",
+		"Local History",
+		"Markdown Extended",
+		"MarkdownLivePreview",
+		"OmniMarkupPreviewer",
+		"Package Control",
+		"PackageResourceViewer",
+		"Side-by-Side Settings",
+		"SideBarEnhancements",
+		"SublimeTmpl",
+		"Sync Settings",
+		"Terminus",
+		"TrailingSpaces"
+	],
+	"repositories":
+	[
+		"https://github.com/maboloshi/CustomizeMarkdownEditor",
+		"https://github.com/maboloshi/LineEndings/tree/master",
+		"https://github.com/maboloshi/HaoGist"
+	]
+}

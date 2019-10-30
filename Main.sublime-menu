@@ -1,0 +1,18 @@
+[
+    {
+        "id": "tools",
+        "children":
+        [
+            {
+                "caption": "浏览用户设置目录…",
+                "command": "open_dir",
+                "args": {"dir": "$packages/User"},
+            },
+            {
+                "caption": "Markdown: 使用 Pine 打开...",
+                "command": "open_markdown_file",
+                "platforms": ["OSX"]
+            }
+        ]
+    }
+]
