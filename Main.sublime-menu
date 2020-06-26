@@ -33,8 +33,12 @@
 			{
 				"caption": "Markdown: 使用 Pine 打开...",
 				"command": "open_markdown_file",
-                "platforms": ["OSX"]
-            }
-        ]
-    }
+				"platforms": ["OSX"]
+			},
+			{
+				"caption": "插入当前时间",
+				"command": "add_current_time"
+			}
+		]
+	}
 ]
