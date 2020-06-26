@@ -91,6 +91,7 @@ GitHub.sublime-settings
 
 HaoGist/
 *~*
-SBSCompare*
+*.hidden-tmTheme
+*.hidden-color-scheme
 *2*
 *_tmp

@@ -9,6 +9,8 @@
             "platforms": ["linux", "osx"]
         },
 	],
+	"256color": true,
+	"unix_term": "xterm-256color",
 	"unix_lang": "zh_CN.UTF-8",
 	"theme": "user",
 	// Flatland.itermcolors 导入
