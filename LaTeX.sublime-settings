@@ -1,0 +1,6 @@
+// These settings override both User and Default settings for the LaTeX syntax
+{
+	// 禁止自动去掉`Latex 文件`行尾空格
+	// Latex 中行尾空格代表换行
+	"trim_trailing_white_space_on_save": false,
+}
