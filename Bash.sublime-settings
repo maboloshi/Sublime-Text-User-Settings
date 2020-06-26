@@ -3,6 +3,8 @@
 	[
 		"zshrc",
 		".zshrc",
-		"zsh-theme"
+		"zsh-theme",
+		"PKGBUILD",
+		"APKBUILD"
 	]
 }
