@@ -2,6 +2,10 @@
 	"bootstrapped": true,
 	"http_proxy" : "http://127.0.0.1:1087",
 	"https_proxy": "http://127.0.0.1:1087",
+	"ignore_vcs_packages":
+	[
+		"LocalizedMenu",
+	],
 	"in_process_packages":
 	[
 	],
@@ -41,6 +45,7 @@
 	[
 		"https://github.com/maboloshi/CustomizeMarkdownEditor",
 		"https://github.com/maboloshi/LineEndings/tree/master",
-		"https://github.com/xjsender/HaoGist"
+		"https://github.com/xjsender/HaoGist",
+		"https://github.com/maboloshi/LocalizedMenu"
 	]
 }

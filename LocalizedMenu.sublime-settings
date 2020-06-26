@@ -1,3 +1,12 @@
 {
 	"locale": "zh_CN",
+
+	// Insert a custom tab in front of the Help tab on the menu bar.
+	// It needs to be displayed with the user "Main.sublime-menu"
+	// true|false
+	"custom_tab": true,
+
+	// On OSX, hide the preferences tab on the menu bar.
+	// true|false
+	"hide_preferences_tab_on_menu_bar(osx)": false,
 }

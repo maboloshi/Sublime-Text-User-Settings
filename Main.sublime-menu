@@ -56,5 +56,21 @@
 				"command": "add_current_time"
 			}
 		]
-	}
+	},
+//	{
+//		"id": "preferences",
+//		"children":
+//		[
+//
+//		],
+//	},
+	{
+		"caption": "自定义",
+		"mnemonic": "c",
+		"id": "customize",
+		"children":
+		[
+			{"command": "show_panel", "args": {"panel": "find_in_files"}, "caption": "在…查找/替换", "mnemonic": "B" },
+		]
+	},
 ]
