@@ -1,11 +1,27 @@
 [
-    {
-        "id": "tools",
-        "children":
-        [
-            {
-                "caption": "浏览用户设置目录…",
-                "command": "open_dir",
+	{
+		"id": "view",
+		"children":
+		[
+			{ "caption": "可视化空白符号",
+				"children":
+				[
+					{"caption": "当前选择",     "command": "set_setting", "args": {"setting": "draw_white_space", "value": "selection",} },
+					{"caption": "显示行首空白", "command": "set_setting", "args": {"setting": "draw_white_space", "value": ["selection", "leading", "isolated"] } },
+					{"caption": "显示行末空白", "command": "set_setting", "args": {"setting": "draw_white_space", "value": ["selection","trailing", "isolated"] } },
+					{"caption": "显示被可视符号包围空白", "command": "set_setting", "args": {"setting": "draw_white_space", "value": ["selection", "enclosed"] } },
+					{"caption": "显示所有",     "command": "set_setting", "args": {"setting": "draw_white_space", "value": "all", } },
+			 ]
+			},
+		]
+	},
+	{
+		"id": "tools",
+		"children":
+		[
+			{
+				"caption": "浏览用户设置目录…",
+				"command": "open_dir",
 				"args": {"dir": "$packages/User"},
 			},
 			{
