@@ -4,7 +4,7 @@
 	"theme": "Adaptive.sublime-theme",
 	"debug": true,
 	"default_line_endings": "unix",
-	"font_face": "iosevka",
+	"font_face": "等距更纱黑体 sc",
 	"font_size": 20,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
