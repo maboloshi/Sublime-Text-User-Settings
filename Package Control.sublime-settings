@@ -1,6 +1,6 @@
 {
 	"bootstrapped": true,
-	"http_proxy": "http://127.0.0.1:1087",
+	"http_proxy" : "http://127.0.0.1:1087",
 	"https_proxy": "http://127.0.0.1:1087",
 	"in_process_packages":
 	[
@@ -8,12 +8,12 @@
 	"installed_packages":
 	[
 		"ChannelRepositoryTools",
-		"ChineseLocalizations",
 		"Codecs33",
 		"Compare Side-By-Side",
 		"ConvertToUTF8",
 		"CustomizeMarkdownEditor",
 		"DiffTabs",
+		"Dockerfile Syntax Highlighting",
 		"GitLink",
 		"HaoGist",
 		"HTML-CSS-JS Prettify",
@@ -21,6 +21,7 @@
 		"LaTeXTools",
 		"LineEndings",
 		"Local History",
+		"LocalizedMenu",
 		"Markdown Extended",
 		"MarkdownLivePreview",
 		"OmniMarkupPreviewer",
@@ -28,6 +29,9 @@
 		"PackageResourceViewer",
 		"Side-by-Side Settings",
 		"SideBarEnhancements",
+		"Splunk Conf File Syntax Highlighting",
+		"SublimeLinter",
+		"SublimeLinter-shellcheck",
 		"SublimeTmpl",
 		"Sync Settings",
 		"Terminus",
@@ -37,6 +41,6 @@
 	[
 		"https://github.com/maboloshi/CustomizeMarkdownEditor",
 		"https://github.com/maboloshi/LineEndings/tree/master",
-		"https://github.com/maboloshi/HaoGist"
+		"https://github.com/xjsender/HaoGist"
 	]
 }
