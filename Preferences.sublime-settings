@@ -1,25 +1,34 @@
 {
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"theme": "Adaptive.sublime-theme",
 	"debug": true,
-	"font_size": 21,
+	"default_line_endings": "unix",
+	"font_face": "iosevka",
+	"font_size": 20,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"AutoBackups",
-		"LineEndings",
 		"Markdown",
 		"Vintage"
 	],
+	//mac,从finder中打开文件或拖到停靠图标上时，是否创建新窗口
 	"open_files_in_new_windows": false,
+	//切换到其他文件或应用时自动保存文件
 	"save_on_focus_lost": true,
 	"show_encoding": true,
 	"show_full_path": true,
 	"show_line_endings": true,
 	"tab_size": 4,
-	"theme": "Adaptive.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"word_wrap": true,
-	"wrap_width": 0
+	//"translate_tabs_to_spaces": true,
+	"word_wrap": false,
+	"wrap_width": 0,
+	// 显示空白字符
+	"draw_white_space": "selection",
+	// 保存时自动去除行末空白
+	//"trim_trailing_white_space_on_save": true,
+	// 保存时自动增加文件末尾换行
+	//"ensure_newline_at_eof_on_save": true,
 }
