@@ -19,11 +19,11 @@
 		"id": "tools",
 		"children":
 		[
-			{
-				"caption": "浏览用户设置目录…",
-				"command": "open_dir",
-				"args": {"dir": "$packages/User"},
-			},
+//			{
+//				"caption": "浏览用户设置目录…",
+//				"command": "open_dir",
+//				"args": {"dir": "$packages/User"},
+//			},
 			{
 				//"caption": "Terminus: Open Default Shell in View",
 				"caption": "Terminus: 打开内置终端页",
@@ -57,13 +57,35 @@
 			}
 		]
 	},
-//	{
-//		"id": "preferences",
-//		"children":
-//		[
-//
-//		],
-//	},
+	{
+		"id": "preferences",
+		"children":
+		[
+			{ "command": "open_dir", "args": {"dir": "$packages/User"}, "caption": "浏览用户设置目录…", "mnemonic": "B" },
+			{
+				"caption": "编辑用户菜单",
+				"children":
+				[
+					{
+						"caption": "Main.sublime-menu",
+						"command": "edit_settings", "args":
+						{
+							"base_file": "${packages}/Default/Main.sublime-menu",
+							"default": "// Settings in here override those in \"Default/Main.sublime-menu\",\n// and are overridden in turn by syntax-specific settings.\n{\n\t$0\n}\n"
+						},
+					},
+					{
+						"caption": "Tab Context.sublime-menu",
+						"command": "edit_settings", "args":
+						{
+							"base_file": "${packages}/Default/Tab Context.sublime-menu",
+							"default": "// Settings in here override those in \"Default/Tab Context.sublime-menu\",\n// and are overridden in turn by syntax-specific settings.\n{\n\t$0\n}\n"
+						},
+					},
+				]
+			}
+		],
+	},
 	{
 		"caption": "自定义",
 		"mnemonic": "c",
