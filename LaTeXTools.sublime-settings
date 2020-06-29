@@ -1,5 +1,14 @@
 {
 // ------------------------------------------------------------------
+// 全局自定义设置:
+// ------------------------------------------------------------------
+	// 构建成功后继续停留在 ST (true)或是切换到 PDF 浏览器(false)
+	"keep_focus": true,
+
+	// 构建成功后自动打开 pdf 文件
+	"open_pdf_on_build": true,
+
+// ------------------------------------------------------------------
 // 平台设置:
 // ------------------------------------------------------------------
 	"osx":  {
@@ -12,77 +21,132 @@
 	},
 	"windows": {
 		// 设置 Tex 及相关工具的位置, MikTeX 发行版可留空
-		 "texpath": "E:\\MiKTeX\\texmfs\\install\\miktex\\bin;$PATH",
+		 "texpath": "G:\\miktex-portable\\texmfs\\install\\miktex\\bin\\x64;D:\\App\\perl\\bin;$PATH",
+
 		// TeXlive 2011 以上 发行版 参考
 		//"texpath" : "E:\\texlive\\2016\\bin\\win32;$PATH",
 
-		// 发行版设置 "miktex" or "texlive"
+		// 发行版设置 "miktex" 或 "texlive", MikTeX 发行版可留空
 		"distro": "miktex",
+		// 注意:
+		//  1. Win 下 MikTex 默认使用`texify`编译工具
+		//  2. 若此处将`miktex`伪装成`texlive`, 可强制 Win 下 MikTex 使用`latexmk`,
+		//     但是, 相对于放弃了 MikTex 对`aux_directory`的支持, 而使用`output_directory`
+		//  3. `latexmk`依赖于`perl`, 请提前安装好
+		//  4. 请确保在上面指定`texpath`的路径中能找到`perl`程序
 
 		// 调用 Sumatra, 若留空将从 $PATH 寻找
-		"sumatra": "D:\\App\\WinEdt 10.3\\Local\\Plugins\\SumatraPDF\\SumatraPDF.exe",
+		"sumatra": "D:\\App\\WinEdt 10\\Local\\Plugins\\SumatraPDF\\SumatraPDF.exe",
 
-		// Command to invoke Sublime Text. Used if the keep_focus toggle is true.
-		// If blank, "subl.exe" or "sublime_text.exe" will be used.
+		// 当keep_focus 切换为 true, 调用 Sublime Text
+		// 若留空, 则将使用 "subl.exe" 或 "sublime_text.exe"
 		"sublime_executable": "",
-		// how long (in seconds) to wait after the jump_to_pdf command completes
-		// before switching focus back to Sublime Text. This may need to be
-		// adjusted depending on your machine and configuration.
+
+		// 在jump_to_pdf命令完成之后，将焦点切换回 ST 之前要等待的时间
+		//（以秒为单位）。这可能需要根据您的机器和配置进行调整。
 		"keep_focus_delay": 0.5
 	},
 
 // ------------------------------------------------------------------
 // 输出目录设置:
+// 注意:
+//  1. 以下设置项, 支持 Tex Live 和 MikTex 的编译工具`latexmk`
+//  2. MikTex 的版本全部支持
+//	3. Tex Live 的版本不支持`aux_directory`, 但支持`output_directory`
+//     可同时设置`copy_output_on_build`, 实现相似功能
+//	4. 编译工具`texify`全部不支持
+//  5. 对于 MikTex (Win平台) 其默认编译工具为`texify` 或者 builder 为`simple`时, 以下设置项均会被忽略
 // ------------------------------------------------------------------
 	"aux_directory": "tmp",
-	// 指定辅助文件夹
-	// ""               默认,不使用
+	// 指定辅助文件夹, 用于存放编译过程中各种辅助文件, 且将会把构建完成的 pdf 文件自动复制到 tex 文件
+	// 所在文件夹中), 仅支持 MikTex 的`latexmk`版本
+	// 对于 Tex Live 可设置`output_directory`和`copy_output_on_build`来实现相似功能
 	//
-	// path             指定绝对路径或相对于主tex文件路径
+	// 可设定值:
+	// ""               默认, 不使用
 	//
-	// "<<temp>>"       由ST创建临时文件夹, 在ST重启后自动删除
+	// path             自定义路径, 绝对路径或相对于 tex 文件路径
 	//
-	// "<<project>>"    在主tex文件同一目录中创建辅助文件夹;名称为主文件绝对路径的MD5值;不会主动删除
+	// "<<temp>>"       由 ST 创建临时文件夹, 在 ST 重启后自动删除
 	//
-	// "<<cache>>"      ST3在ST缓存目录中创建辅助文件夹,不会主动删除,不会与主tex文件位于同一目录中;
+	// "<<project>>"    在 tex 文件所在文件夹中创建; 名称为 tex 文件绝对路径的MD5值; 且不会主动删除
 	//
-	// 注意: 此处为全局设定,会覆盖 tex 文件中％!TEX指令
+	// "<<cache>>"      由 ST3 在 ST缓存目录中创建, 不会主动删除;
+	//
+	// 注意:
+	//  1. 此设置会被相应的 tex 文件头 `%! TEX`指令覆盖
+	//	2. 此设置也会被 ST项目文件(*.sublime-project)中的相关设定覆盖，
+	//     但是请注意，路径将相对于进行解释项目文件
 
-	"output_directory": "tmp",
-	// 指定输出文件夹
-	// 值与辅助文件夹描述类似
+	//"output_directory": "tmp",
+	// 指定输出文件夹, 用于存放编译过程中各种辅助文件和最终构建完成的 pdf 文件
+	// Tex Live 和 MikTex 中的`latexmk`均可配合设置`copy_output_on_build`使用
+	// 值及注意事项与辅助文件夹描述类似
 
 	"jobname": "",
 	// 指定构建文档时要使用的作业名
 
-	"copy_output_on_build": "true",
-	// 指定是否将最终PDF文件复制到与主tex文件相同的文件夹中;
-	// 如果为空，且已设置"output_directory"或tex 文件中％!TEX指令设置,
-	// 它将被复制到与主tex文件相同的文件夹中的文件扩展名列表;
+	//"copy_output_on_build": "true",
+	// 指定是否将最终构建完成的 pdf 文件复制到 tex 文件所在文件夹中,
+	// 也可指定复制其他文件的类型, 如设置 [".pdf",".xdv"];
+	// 必须提前设定好`output_directory`
+
 // ------------------------------------------------------------------
 // 构建引擎设置:
 // ------------------------------------------------------------------
-	"builder": "basic",
-	// "builder_path": "",
-	// 指定构建引擎及路径,详见系统设置
-	// "basic": 从tex 文件中％!TEX program指令
+	"builder": "traditional",
+	// 指定构建引擎
+	// 可设定值:
+	//
+	// "default" 或 ""	默认的内置构建引擎, 目前与"traditional"相同
+	//
+	// "basic"			按需调用 pdflatex / xelatex / lualatex -->
+	//					biber / bibtex --> pdflatex / xelatex / lualatex
+	//					与"simple"构建器不同, 它支持 LaTeXTools 构建器的大多数功能。
+	//
+	// "script"			外部脚本: 调用"builder_settings"下全局或各系统平台中
+	//					在"script_commands"中设置指定的命令集
+	//
+	// "simple"			按需调用 pdflatex 1-2 次 --> bibtex --> pdflatex(按需)
+	//					仅作为编写自己的构建引擎的简单示例。
+	//
+	// "traditional"	调用 latexmk (TeXLive, MiKTeX) 或 texify (仅 Win 下的 MiKTeX )
+	//
+	// 自定义名称		使用第三方构建引擎, 请在下面设置"builder_path"选项
+	//					注意: 自定义名称不能同上面各预设值相同
+
+	//"builder_path": "",
+	// 指定构建引擎及路径, 详见插件文档和默认设置文件
 
 	"builder_settings" : {
+
+		// 全局设置
+
 		// 在 ST 面板中显示编译日志
 		"display_log": "true",
 
-		// 自定义编译命令
+		// 自定义编译命令(全局), 示例
 		//"command" : "xelatex -synctex=1 -enable-write18 -interaction=nonstopmode -aux-directory=tmp",
+		//"command" : "latexmk -cd -f -%E -interaction=nonstopmode -synctex=1",
+		//"command" : "latexmk -pvc -f -xelatex -interaction=nonstopmode -synctex=1",
 
-		// 自定义编译参数
+		// 自定义编译参数(全局), 示例
 		//"options": ["--shell-escape"],
 
-//		"windows" : {
-//			//"options": ["--shell-escape"],
-//		},
-//		"osx" : {
-			// See README or third-party documentation
-//			"command" : "xelatex -synctex=1 -enable-write18 -interaction=nonstopmode -aux-directory=tmp",
-//		},
+		// 各系统平台设置：
+		"windows" : {
+			// 强制 MikTex (Win平台) 使用`latexmk`编译, 代替默认的`texify`
+			// 注意:
+			//  1. `latexmk`赖于`perl`, 请提前安装好
+			//  2. 请确保在上面指定`texpath`的路径中能找到`perl`程序
+			"command" : "latexmk -cd -f -%E -interaction=nonstopmode -synctex=1",
+		},
+		"osx" : {
+			// osx 下直接使用默认设置
+		},
 	},
+
+// ------------------------------------------------------------------
+// 更多设置: 详见插件文档和默认设置文件
+// ------------------------------------------------------------------
 }
