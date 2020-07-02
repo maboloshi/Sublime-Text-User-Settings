@@ -93,6 +93,7 @@
 		"children":
 		[
 			{"command": "show_panel", "args": {"panel": "find_in_files"}, "caption": "在…查找/替换", "mnemonic": "B" },
+			{"command": "toggle_read_only_status", "checkbox": true, "caption": "文件锁定" },
 		]
 	},
 ]

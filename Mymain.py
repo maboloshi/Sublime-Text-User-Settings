@@ -19,6 +19,33 @@ class AddCurrentTimeCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		self.view.run_command("insert_snippet",
 			{
-			 	"contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+				"contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 			}
 		)
+
+class ReadOnlyStatusListener(sublime_plugin.EventListener):
+	# 当载入只读文档时，在状态栏显示"【只读】"标识
+	def on_load_async(self, view):
+		if view.is_read_only():
+			view.set_status("file_status","【只读】")
+			#view.window().status_message('注意：文件 '+ view.file_name() + ' 只读')
+
+class ToggleReadOnlyStatusCommand(sublime_plugin.TextCommand):
+	# 对当前文件设置或取消只读, 并在状态栏显示或销毁'只读'标识
+	def run(self, edit):
+		if self.view.is_read_only():
+			# 取消只读
+			self.view.set_read_only(False)
+			# 毁掉状态栏'只读'标识
+			self.view.erase_status("file_status")
+			# 状态栏提示
+			#sublime.status_message("File unlocked!!")
+		else:
+			# 设置只读
+			self.view.set_read_only(True)
+			# 设置状态栏'只读'标识
+			self.view.set_status("file_status", '【只读】')
+			#sublime.status_message("File is locked!!")
+
+	def is_checked(self):
+		return self.view.is_read_only()

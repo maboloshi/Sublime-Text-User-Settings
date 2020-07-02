@@ -2,5 +2,9 @@
     {
         "caption": "Markdown: Open with ine.app",
         "command": "open_markdown_file"
+    },
+    {
+        "caption": "Toggle Read Only Status",
+        "command": "toggle_read_only_status"
     }
 ]
