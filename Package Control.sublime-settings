@@ -11,6 +11,7 @@
 	],
 	"installed_packages":
 	[
+		"BracketHighlighter",
 		"ChannelRepositoryTools",
 		"Codecs33",
 		"Compare Side-By-Side",
