@@ -5,6 +5,7 @@ import sublime_plugin
 import os
 import datetime
 
+# 复制当前文件的文件名
 class CopyFilenameCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		if len(self.view.file_name()) > 0:
@@ -15,6 +16,7 @@ class CopyFilenameCommand(sublime_plugin.TextCommand):
 	def is_enabled(self):
 		return self.view.file_name() is not None and len(self.view.file_name()) > 0
 
+# 在当前位置插入时间
 class AddCurrentTimeCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		self.view.run_command("insert_snippet",

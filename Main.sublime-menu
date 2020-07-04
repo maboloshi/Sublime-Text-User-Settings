@@ -82,6 +82,28 @@
 							"default": "// Settings in here override those in \"Default/Tab Context.sublime-menu\",\n// and are overridden in turn by syntax-specific settings.\n{\n\t$0\n}\n"
 						},
 					},
+					{
+						"caption": "Context.sublime-menu",
+						"command": "edit_settings", "args":
+						{
+							"base_file": "${packages}/Default/Context.sublime-menu",
+							"default": "// Settings in here override those in \"Default/Context.sublime-menu\",\n// and are overridden in turn by syntax-specific settings.\n{\n\t$0\n}\n"
+						},
+					},
+					{
+						"caption": "Mymain.py",
+						"command": "open_file",
+						"args": {
+							"file": "${packages}/User/Mymain.py",
+						},
+					},
+					{
+						"caption": "随笔",
+						"command": "open_file",
+						"args": {
+							"file": "${packages}/User/Notes.md",
+						},
+					},
 				]
 			}
 		],
