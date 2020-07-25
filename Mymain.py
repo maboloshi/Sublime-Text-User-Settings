@@ -3,7 +3,7 @@
 import sublime
 import sublime_plugin
 import os
-import datetime
+from datetime import datetime
 from subprocess import Popen
 
 # 复制当前文件的文件名
@@ -22,7 +22,7 @@ class AddCurrentTimeCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		self.view.run_command("insert_snippet",
 			{
-				"contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+				"contents": "%s" % datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 			}
 		)
 
