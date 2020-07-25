@@ -4,7 +4,6 @@
 	"https_proxy": "http://127.0.0.1:1087",
 	"ignore_vcs_packages":
 	[
-		"LocalizedMenu",
 	],
 	"in_process_packages":
 	[
@@ -26,7 +25,6 @@
 		"LaTeXTools",
 		"LineEndings",
 		"Local History",
-		"LocalizedMenu",
 		"Markdown Extended",
 		"MarkdownLivePreview",
 		"OmniMarkupPreviewer",
@@ -35,18 +33,19 @@
 		"Side-by-Side Settings",
 		"SideBarEnhancements",
 		"Splunk Conf File Syntax Highlighting",
+		"sublime-text-chinese",
 		"SublimeLinter",
 		"SublimeLinter-shellcheck",
 		"SublimeTmpl",
 		"Sync Settings",
 		"Terminus",
-		"TrailingSpaces"
+		"TrailingSpaces",
 	],
 	"repositories":
 	[
 		"https://github.com/maboloshi/CustomizeMarkdownEditor",
 		"https://github.com/maboloshi/LineEndings/tree/master",
 		"https://github.com/xjsender/HaoGist",
-		"https://github.com/maboloshi/LocalizedMenu"
-	]
+		"https://github.com/maboloshi/sublime-text-chinese/tree/dev",
+	],
 }
