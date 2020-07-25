@@ -1,0 +1,24 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"file_exclude_patterns": [
+				"*.hidden-tmTheme",
+				"*.hidden-color-scheme",
+				"Package Control.last-run",
+				"Package Control.ca-list",
+				"Package Control.ca-bundle",
+				"Package Control.system-ca-bundle",
+				"Package Control.merged-ca-bundle",
+				"Package Control.user-ca-bundle",
+				"oscrypto-ca-bundle.crt",
+				"bh_unicode_properties.cache",
+			],
+			"folder_exclude_patterns": [
+				"Package Control.cache",
+				"Package Control.ca-certs",
+			],
+		}
+	]
+}
