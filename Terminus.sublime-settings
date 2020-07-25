@@ -1,14 +1,9 @@
 {
-	"shell_configs": [
-        {
-            "name": "Zsh",
-            "cmd": ["zsh", "-i", "-l"],
-            "env": {},
-            "enable": true,
-            "default": false,
-            "platforms": ["linux", "osx"]
-        },
-	],
+    "default_config": {
+        "linux": "Zsh",    // login shell
+        "osx": "Zsh",      // login shell
+        "windows": "WSL Login Shell"
+    },
 	"256color": true,
 	"unix_term": "xterm-256color",
 	"unix_lang": "zh_CN.UTF-8",

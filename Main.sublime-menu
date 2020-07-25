@@ -37,14 +37,12 @@
 				//},
 				"command": "terminus_open",
 				"args": {"config_name": "Default"},
-				"platforms": ["OSX"]
 			},
 			{
 				"caption": "Terminus: 打开内置终端面板",
 				"mnemonic": "P",
 				"command": "terminus_open",
 				"args": {"config_name": "Default", "panel_name": "Terminus"},
-				"platforms": ["OSX"]
 			},
 			{
 				"caption": "Markdown: 使用 Pine 打开...",

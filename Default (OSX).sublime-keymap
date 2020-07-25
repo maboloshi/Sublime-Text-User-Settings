@@ -1,0 +1,9 @@
+[
+	// Option  映射 Alt
+    { "keys": ["option+down"],      "command": "terminus_keypress", "args": {"key": "down",      "alt": true}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["option+up"],        "command": "terminus_keypress", "args": {"key": "up",        "alt": true}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["option+right"],     "command": "terminus_keypress", "args": {"key": "right",     "alt": true}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["option+left"],      "command": "terminus_keypress", "args": {"key": "left",      "alt": true}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["option+backspace"], "command": "terminus_keypress", "args": {"key": "backspace", "alt": true}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["option+delete"],    "command": "terminus_keypress", "args": {"key": "delete",    "alt": true}, "context": [{"key": "terminus_view"}] },
+]
