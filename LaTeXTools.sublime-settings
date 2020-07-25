@@ -1,41 +1,46 @@
 {
 // ------------------------------------------------------------------
-// 全局自定义设置:
+// 常规设置:
 // ------------------------------------------------------------------
 	// 构建成功后继续停留在 ST (true)或是切换到 PDF 浏览器(false)
 	"keep_focus": true,
-
-	// 构建成功后自动打开 pdf 文件
-	"open_pdf_on_build": true,
 
 // ------------------------------------------------------------------
 // 平台设置:
 // ------------------------------------------------------------------
 	"osx":  {
 		// 设置 Tex 及相关工具的位置
-		// =====MikTeX 发行版 个人优先全局========
-		"texpath": "$PATH:$HOME/bin"
+		// ======MikTeX 发行版 参考=========
+		"texpath": "$PATH:$HOME/bin",
 
-		// ====TeXlive 发行版 参考========
-		//"texpath": "$PATH:/Library/TeX/texbin"
+		// ======TeXlive 发行版 参考========
+		//"texpath": "$PATH:/Library/TeX/texbin",
+
+		// 发行版设置 "miktex" 或 "texlive"
+		"distro": "miktex"
+		// 注意:
+		//  1. MikTeX 支持`aux_directory`功能
 	},
 	"windows": {
-		// 设置 Tex 及相关工具的位置, MikTeX 发行版可留空
+		// 设置 Tex 及相关工具的位置
+		// ======MikTeX 发行版 参考=========
 		 "texpath": "G:\\miktex-portable\\texmfs\\install\\miktex\\bin\\x64;D:\\App\\perl\\bin;$PATH",
+		// 注意:
+		//  1. 设置 MikTeX 携带版路径
+		//  2. 设置`perl.exe`查找路径
 
-		// TeXlive 2011 以上 发行版 参考
+		// ==TeXlive 2011 以上 发行版 参考==
 		//"texpath" : "E:\\texlive\\2016\\bin\\win32;$PATH",
 
-		// 发行版设置 "miktex" 或 "texlive", MikTeX 发行版可留空
+		// 发行版设置 "miktex" 或 "texlive"
 		"distro": "miktex",
 		// 注意:
-		//  1. Win 下 MikTex 默认使用`texify`编译工具
-		//  2. 若此处将`miktex`伪装成`texlive`, 可强制 Win 下 MikTex 使用`latexmk`,
-		//     但是, 相对于放弃了 MikTex 对`aux_directory`的支持, 而使用`output_directory`
-		//  3. `latexmk`依赖于`perl`, 请提前安装好
-		//  4. 请确保在上面指定`texpath`的路径中能找到`perl`程序
+		//  1. Win 下 MikTeX 使用默认`builder`时, 默认使用`texify`编译工具
+		//  2. 但当检测到`perl`存在, 则将使用`latexmk`编译工具
+		//  3. 请确保在上面指定`texpath`的路径中能找到`perl`程序
+		//	4. 请务必使用`maboloshi/LaTeXTools`分支, 该分支已修正
 
-		// 调用 Sumatra, 若留空将从 $PATH 寻找
+		// 调用 Sumatra PDF 浏览器, 若留空将从 $PATH 寻找
 		"sumatra": "D:\\App\\WinEdt 10\\Local\\Plugins\\SumatraPDF\\SumatraPDF.exe",
 
 		// 当keep_focus 切换为 true, 调用 Sublime Text
@@ -50,17 +55,18 @@
 // ------------------------------------------------------------------
 // 输出目录设置:
 // 注意:
-//  1. 以下设置项, 支持 Tex Live 和 MikTex 的编译工具`latexmk`
-//  2. MikTex 的版本全部支持
-//	3. Tex Live 的版本不支持`aux_directory`, 但支持`output_directory`
+//  1. 以下设置项, MikTeX 全部支持
+//  2. Tex Live 不支持`aux_directory`, 但支持`output_directory`
 //     可同时设置`copy_output_on_build`, 实现相似功能
-//	4. 编译工具`texify`全部不支持
-//  5. 对于 MikTex (Win平台) 其默认编译工具为`texify` 或者 builder 为`simple`时, 以下设置项均会被忽略
+//  3. 编译工具`texify`全部不支持, MikTeX (Win平台, 且未检测到`perl`) 其默认编译工具就是`texify`
+//  4. 当编译工具`texify` 或者 builder 为`simple`时, 以下设置项均会被忽略
 // ------------------------------------------------------------------
-	"aux_directory": "tmp",
-	// 指定辅助文件夹, 用于存放编译过程中各种辅助文件, 且将会把构建完成的 pdf 文件自动复制到 tex 文件
-	// 所在文件夹中), 仅支持 MikTex 的`latexmk`版本
-	// 对于 Tex Live 可设置`output_directory`和`copy_output_on_build`来实现相似功能
+	"aux_directory": "<<temp>>",
+	// 指定辅助文件夹, 仅用于存放编译过程中各种辅助文件
+	// 注意:
+	//   1. 构建完成的 *.pdf 文件和反向搜索索引文件 *.synctex 生成在 tex 文件所在文件夹中,
+	//      仅支持 MikTeX 的`latexmk`
+	//   2. 对于 Tex Live 可设置`output_directory`和`copy_output_on_build`来实现相似功能
 	//
 	// 可设定值:
 	// ""               默认, 不使用
@@ -75,21 +81,23 @@
 	//
 	// 注意:
 	//  1. 此设置会被相应的 tex 文件头 `%! TEX`指令覆盖
-	//	2. 此设置也会被 ST项目文件(*.sublime-project)中的相关设定覆盖，
+	//  2. 此设置也会被 ST项目文件(*.sublime-project)中的相关设定覆盖，
 	//     但是请注意，路径将相对于进行解释项目文件
 
-	//"output_directory": "tmp",
-	// 指定输出文件夹, 用于存放编译过程中各种辅助文件和最终构建完成的 pdf 文件
-	// Tex Live 和 MikTex 中的`latexmk`均可配合设置`copy_output_on_build`使用
-	// 值及注意事项与辅助文件夹描述类似
+	"output_directory": "",
+	// 指定输出文件夹, 用于存放编译过程中所有输出文件
+	// 注意:
+	//   1. Tex Live 和 MikTeX 中的`latexmk`均可配合设置`copy_output_on_build`使用
+	//   2. 值及注意事项与辅助文件夹描述类似
 
 	"jobname": "",
 	// 指定构建文档时要使用的作业名
 
 	//"copy_output_on_build": "true",
-	// 指定是否将最终构建完成的 pdf 文件复制到 tex 文件所在文件夹中,
-	// 也可指定复制其他文件的类型, 如设置 [".pdf",".xdv"];
-	// 必须提前设定好`output_directory`
+	// 指定是否将最终构建完成的 pdf 文件复制到 tex 文件所在文件夹中
+	// 注意:
+	//  1. 也可指定复制其他文件的类型, 如设置 [".pdf",".synctex"];
+	//  2. 必须提前设定好`output_directory`
 
 // ------------------------------------------------------------------
 // 构建引擎设置:
@@ -110,9 +118,9 @@
 	// "simple"			按需调用 pdflatex 1-2 次 --> bibtex --> pdflatex(按需)
 	//					仅作为编写自己的构建引擎的简单示例。
 	//
-	// "traditional"	调用 latexmk (TeXLive, MiKTeX) 或 texify (仅 Win 下的 MiKTeX )
+	// "traditional"	调用 latexmk (TeXLive, MikTeX) 或 texify (仅 Win 下的 MikTeX, 未检测到`perl`时 )
 	//
-	// 自定义名称		使用第三方构建引擎, 请在下面设置"builder_path"选项
+	// "自定义名称"		使用第三方构建引擎, 请在下面设置"builder_path"选项
 	//					注意: 自定义名称不能同上面各预设值相同
 
 	//"builder_path": "",
@@ -125,27 +133,39 @@
 		// 在 ST 面板中显示编译日志
 		"display_log": "true",
 
-		// 自定义编译命令(全局), 示例
+		// 自定义编译命令(全局), 示例:
 		//"command" : "xelatex -synctex=1 -enable-write18 -interaction=nonstopmode -aux-directory=tmp",
 		//"command" : "latexmk -cd -f -%E -interaction=nonstopmode -synctex=1",
 		//"command" : "latexmk -pvc -f -xelatex -interaction=nonstopmode -synctex=1",
 
-		// 自定义编译参数(全局), 示例
+		// 自定义编译参数(全局), 示例:
 		//"options": ["--shell-escape"],
 
 		// 各系统平台设置：
+		// 注意:
+		//  1. 当使用`maboloshi/LaTeXTools`分支, 以下各平台设置优先于全局,
+		//     则当相应平台设置存在的情况下, 使用该设置而不是全局设置
 		"windows" : {
-			// 强制 MikTex (Win平台) 使用`latexmk`编译, 代替默认的`texify`
-			// 注意:
-			//  1. `latexmk`赖于`perl`, 请提前安装好
-			//  2. 请确保在上面指定`texpath`的路径中能找到`perl`程序
-			"command" : "latexmk -cd -f -%E -interaction=nonstopmode -synctex=1",
+			// See README or third-party documentation
+			//"options": ["--shell-escape"],
 		},
 		"osx" : {
-			// osx 下直接使用默认设置
+			// See README or third-party documentation
+			//"command" : "latexmk -pvc -f -xelatex -interaction=nonstopmode -synctex=1",
 		},
 	},
+// ------------------------------------------------------------------
+// PDF 浏览设置
+// ------------------------------------------------------------------
 
+	// 构建成功后自动打开 pdf 文件
+	"open_pdf_on_build": true,
+
+	// OPTION: "disable_focus_hack"
+	// if set to true, this will stop LaTeXTools from attempting to steal focus
+	// from the viewer. NOTE: This does not mean that the *viewer* won't steal
+	// the focus, only that LaTeXTools won't try to steal the focus back.
+	"disable_focus_hack": false,
 // ------------------------------------------------------------------
 // 更多设置: 详见插件文档和默认设置文件
 // ------------------------------------------------------------------
