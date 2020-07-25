@@ -15,7 +15,6 @@
 		"Codecs33",
 		"Compare Side-By-Side",
 		"ConvertToUTF8",
-		"CustomizeMarkdownEditor",
 		"DiffTabs",
 		"Dockerfile Syntax Highlighting",
 		"GitLink",
@@ -43,7 +42,6 @@
 	],
 	"repositories":
 	[
-		"https://github.com/maboloshi/CustomizeMarkdownEditor",
 		"https://github.com/maboloshi/LineEndings/tree/master",
 		"https://github.com/xjsender/HaoGist",
 		"https://github.com/maboloshi/sublime-text-chinese/tree/dev",

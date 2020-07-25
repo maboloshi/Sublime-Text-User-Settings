@@ -44,10 +44,16 @@
 				"command": "terminus_open",
 				"args": {"config_name": "Default", "panel_name": "Terminus"},
 			},
+//			{
+//				"caption": "Markdown: 使用 Pine 打开...",
+//				"command": "open_markdown_file",
+//				"platforms": ["OSX"]
+//			},
 			{
 				"caption": "Markdown: 使用 Pine 打开...",
-				"command": "open_markdown_file",
-				"platforms": ["OSX"]
+				"command": "open_file_with_external_tool",
+				"args": {"app": "Pine"},
+				"platform": "OSX"
 			},
 			{
 				"caption": "插入当前时间",

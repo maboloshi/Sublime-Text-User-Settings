@@ -4,6 +4,7 @@ import sublime
 import sublime_plugin
 import os
 import datetime
+from subprocess import Popen
 
 # 复制当前文件的文件名
 class CopyFilenameCommand(sublime_plugin.TextCommand):
@@ -51,3 +52,21 @@ class ToggleReadOnlyStatusCommand(sublime_plugin.TextCommand):
 
 	def is_checked(self):
 		return self.view.is_read_only()
+
+# 使用外部工具(默认)打开
+class OpenFileWithExternalToolCommand(sublime_plugin.TextCommand):
+	def run(self, edit, **args):
+		if len(self.view.file_name()) > 0:
+			file = self.view.file_name()
+			if sublime.platform() == "osx":
+				if args['app'] is None:
+					Popen(['open', file])
+				else:
+					Popen(['open', '-a', args['app'], file])
+			elif sublime.platform() == "windows":
+				os.startfile(file)
+			elif sublime.platform() == "linux":
+				Popen(['xdg-open', file])
+
+	def is_enabled(self):
+		return True
