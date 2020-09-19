@@ -27,6 +27,7 @@
 		"Markdown Extended",
 		"MarkdownLivePreview",
 		"OmniMarkupPreviewer",
+		"OpenTerminal",
 		"Package Control",
 		"PackageResourceViewer",
 		"Side-by-Side Settings",
@@ -46,5 +47,6 @@
 		"https://github.com/xjsender/HaoGist",
 		"https://github.com/maboloshi/LaTeXTools",
 		"https://github.com/maboloshi/sublime-text-chinese/tree/dev",
+		"https://github.com/fffilo/OpenTerminal",
 	],
 }
