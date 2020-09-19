@@ -10,6 +10,7 @@
 	],
 	"installed_packages":
 	[
+		"BeyondCompare",
 		"BracketHighlighter",
 		"ChannelRepositoryTools",
 		"Codecs33",
