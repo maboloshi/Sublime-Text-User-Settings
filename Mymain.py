@@ -17,6 +17,17 @@ class CopyFilenameCommand(sublime_plugin.TextCommand):
 	def is_enabled(self):
 		return self.view.file_name() is not None and len(self.view.file_name()) > 0
 
+# 复制当前文件所在文件夹路径
+class CopyDirectorynameCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		if len(self.view.file_name()) > 0:
+			dir_name = os.path.dirname(self.view.file_name())
+			sublime.set_clipboard(dir_name)
+			sublime.status_message("Copied file directory: %s" % dir_name)
+
+	def is_enabled(self):
+		return self.view.file_name() is not None and len(self.view.file_name()) > 0
+
 # 在当前位置插入时间
 class AddCurrentTimeCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
