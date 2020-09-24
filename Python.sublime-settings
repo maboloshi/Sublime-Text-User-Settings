@@ -1,0 +1,13 @@
+// These settings override both User and Default settings for the Python syntax
+{
+	// tab宽度
+	"tab_size": 4,
+	// 输入时转换tab为空格
+	"translate_tabs_to_spaces": true,
+	// 保存文档时自动tab转空格(失效)?
+	"expand_tabs_on_save": true,
+	// 保存时自动去除行末空白
+	"trim_trailing_white_space_on_save": true,
+	// 保存时自动增加文件末尾换行
+	"ensure_newline_at_eof_on_save": true,
+}
