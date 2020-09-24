@@ -5,6 +5,6 @@
 	{ "command": "copy_path", "caption": "复制文件路径" },
 	{ "command": "copy_directoryname", "caption": "复制所在文件夹路径" }, //命令由  Mymain.py 定义
 	{ "command": "open_dir", "args": {"dir": "$file_path", "file": "$file_name"}, "caption": "打开所在文件夹…" },
-	{ "command": "open_terminal",	"args": {"paths": ["?filename"]	}, "caption": "在终端中打开" }, //命令由OpenTerminal插件提供
+	{ "command": "open_terminal",	"args": {"paths": ["?filename"]	}, "caption": "在终端中打开…" }, //命令由OpenTerminal插件提供
 	{ "caption": "在侧边栏中显示", "id": "locate_in_sidebar" }//命令由SideBarEnhancements插件提供
 ]
