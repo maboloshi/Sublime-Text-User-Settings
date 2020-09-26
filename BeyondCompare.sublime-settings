@@ -1,4 +1,7 @@
 {
 	//Define a custom path to beyond compare
-	"beyond_compare_path": "/usr/local/bin/bcomp"
+	"beyond_compare_path": {
+		"osx": "/usr/local/bin/bcomp",
+		"windows": "D:\\App\\Beyond Compare Pro 4.3.4.24657 x64 绿色版\\BComp.exe"
+	}
 }
