@@ -10,6 +10,9 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
+		"AdvancedNewFile",
+		"AutomaticPackageReloader",
 		"BeyondCompare",
 		"BracketHighlighter",
 		"ChannelRepositoryTools",
