@@ -38,10 +38,10 @@
 		//  1. Win 下 MikTeX 使用默认`builder`时, 默认使用`texify`编译工具
 		//  2. 但当检测到`perl`存在, 则将使用`latexmk`编译工具
 		//  3. 请确保在上面指定`texpath`的路径中能找到`perl`程序
-		//	4. 请务必使用`maboloshi/LaTeXTools`分支, 该分支已修正
+		//  4. 请务必使用`maboloshi/LaTeXTools`分支, 该分支已修正
 
 		// 调用 Sumatra PDF 浏览器, 若留空将从 $PATH 寻找
-		"sumatra": "D:\\App\\WinEdt 10\\Local\\Plugins\\SumatraPDF\\SumatraPDF.exe",
+		"sumatra": "D:\\App\\WinEdt 10.3\\Local\\Plugins\\SumatraPDF\\SumatraPDF.exe",
 
 		// 当keep_focus 切换为 true, 调用 Sublime Text
 		// 若留空, 则将使用 "subl.exe" 或 "sublime_text.exe"
@@ -89,6 +89,14 @@
 	// 注意:
 	//   1. Tex Live 和 MikTeX 中的`latexmk`均可配合设置`copy_output_on_build`使用
 	//   2. 值及注意事项与辅助文件夹描述类似
+
+	//注意: aux_directory和output_directory不同点
+	//  1. `aux_directory`仅 MikTex 的`latexmk`版本支持
+	//  2. `aux_directory`构建完成的 pdf 文件以及*.synctex*会自动复制到 tex 文件
+	//     所在文件夹中, 关键固化*.synctex*位置指向 tex 文件所在文件夹
+	//  3. 虽然使用`output_directory`, 可借助本工具("copy_output_on_build": "true")也能将
+	//     构建完成的 pdf 文件复制到 tex 文件所在文件夹中, 但是固化*.synctex*位置指向`output_directory`,
+	//     则如果将*.synctex*文件也复制到 tex 文件所在文件夹, pdf的反向搜索功能将失效
 
 	"jobname": "",
 	// 指定构建文档时要使用的作业名
@@ -143,7 +151,7 @@
 
 		// 各系统平台设置：
 		// 注意:
-		//  1. 当使用`maboloshi/LaTeXTools`分支, 以下各平台设置优先于全局,
+		//  1. 当使用`maboloshi/LaTeXTools`分支, 以下各平台`command`设置优先于全局,
 		//     则当相应平台设置存在的情况下, 使用该设置而不是全局设置
 		"windows" : {
 			// See README or third-party documentation
