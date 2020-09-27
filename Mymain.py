@@ -74,7 +74,7 @@ class OpenFileWithExternalToolCommand(sublime_plugin.TextCommand):
         if len(self.view.file_name()) > 0:
             file = self.view.file_name()
             if sublime.platform() == "osx":
-                if args['app'] is None:
+                if "app" not in args:
                     Popen(['open', file])
                 else:
                     Popen(['open', '-a', args['app'], file])
