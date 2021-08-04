@@ -7,6 +7,19 @@ from datetime import datetime
 from subprocess import Popen
 
 
+# 覆盖`Default`插件中的同名`CopyPathCommand`定义
+# 复制当前文件路径
+class CopyPathCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        if len(self.view.file_name()) > 0:
+            file_path = self.view.file_name()
+            sublime.set_clipboard('"%s"' % file_path)
+            sublime.status_message('Copied file path: "%s"' % file_path)
+
+    def is_enabled(self):
+        return self.view.file_name() is not None and len(self.view.file_name()) > 0
+
+
 # 复制当前文件的文件名
 class CopyFilenameCommand(sublime_plugin.TextCommand):
     def run(self, edit):
