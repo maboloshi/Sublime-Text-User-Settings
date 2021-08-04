@@ -40,6 +40,7 @@
 		"sublime-text-chinese",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
+		"SublimeLinter-rubocop",
 		"SublimeLinter-shellcheck",
 		"SublimeTmpl",
 		"Sync Settings",
