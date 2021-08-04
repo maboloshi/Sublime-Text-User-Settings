@@ -24,21 +24,21 @@ class CopyPathCommand(sublime_plugin.TextCommand):
 class CopyFilenameCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         if len(self.view.file_name()) > 0:
-            filename = os.path.basename(self.view.file_name())
-            sublime.set_clipboard(filename)
-            sublime.status_message("Copied file name: %s" % filename)
+            file_basename = os.path.basename(self.view.file_name())
+            sublime.set_clipboard('"%s"' % file_basename)
+            sublime.status_message('Copied file name: "%s"' % file_basename)
 
     def is_enabled(self):
         return self.view.file_name() is not None and len(self.view.file_name()) > 0
 
 
-# 复制当前文件所在文件夹路径
+# 复制当前文件所在路径
 class CopyDirectorynameCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         if len(self.view.file_name()) > 0:
-            dir_name = os.path.dirname(self.view.file_name())
-            sublime.set_clipboard(dir_name)
-            sublime.status_message("Copied file directory: %s" % dir_name)
+            file_dirname = os.path.dirname(self.view.file_name())
+            sublime.set_clipboard('"%s"' % file_dirname)
+            sublime.status_message('Copied file directory: "%s"' % file_dirname)
 
     def is_enabled(self):
         return self.view.file_name() is not None and len(self.view.file_name()) > 0
