@@ -86,3 +86,8 @@ class OpenFileWithExternalToolCommand(sublime_plugin.TextCommand):
 
     def is_enabled(self):
         return True
+
+
+class OpenInstalledPackagesCommand(sublime_plugin.WindowCommand):
+    def run(self):
+        self.window.run_command("open_dir", {"dir": sublime.installed_packages_path()})

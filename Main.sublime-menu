@@ -69,7 +69,8 @@
 		"id": "preferences",
 		"children":
 		[
-			{ "command": "open_dir", "args": {"dir": "$packages/User"}, "caption": "浏览用户设置目录…", "mnemonic": "B" },
+			{ "command": "open_dir", "args": {"dir": "$packages/User"}, "caption": "浏览用户设置目录…"},
+			{ "command": "open_installed_packages", "caption": "浏览 Install Packages 目录…"},
 			{
 				"caption": "编辑用户菜单",
 				"children":
