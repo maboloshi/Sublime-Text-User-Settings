@@ -71,17 +71,18 @@ class ToggleReadOnlyStatusCommand(sublime_plugin.TextCommand):
 # 使用外部工具(默认)打开
 class OpenFileWithExternalToolCommand(sublime_plugin.TextCommand):
     def run(self, edit, **args):
-        if len(self.view.file_name()) > 0:
-            file = self.view.file_name()
-            if sublime.platform() == "osx":
+        file_path = self.view.file_name()
+        if len(file_path) > 0:
+            platform = sublime.platform()
+            if platform == "osx":
                 if "app" not in args:
-                    Popen(['open', file])
+                    Popen(['open', file_path])
                 else:
-                    Popen(['open', '-a', args['app'], file])
-            elif sublime.platform() == "windows":
-                os.startfile(file)
-            elif sublime.platform() == "linux":
-                Popen(['xdg-open', file])
+                    Popen(['open', '-a', args['app'], file_path])
+            elif platform == "windows":
+                os.startfile(file_path)
+            elif platform == "linux":
+                Popen(['xdg-open', file_path])
 
     def is_enabled(self):
         return True
