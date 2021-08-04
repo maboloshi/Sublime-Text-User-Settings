@@ -1,0 +1,12 @@
+// SublimeLinter Settings - User
+{
+	"linters": {
+		"flake8": {
+			"args": [
+				"--max-line-length", "120",
+				// "--ignore", "E133,E226",
+			],
+		}
+	},
+	"no_column_highlights_line": true,
+}

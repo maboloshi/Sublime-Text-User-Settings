@@ -39,6 +39,7 @@
 		"Splunk Conf File Syntax Highlighting",
 		"sublime-text-chinese",
 		"SublimeLinter",
+		"SublimeLinter-flake8",
 		"SublimeLinter-shellcheck",
 		"SublimeTmpl",
 		"Sync Settings",
