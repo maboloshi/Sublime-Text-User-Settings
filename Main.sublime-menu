@@ -1,5 +1,20 @@
 [
 	{
+		"id": "edit",
+		"children":
+		[
+			{
+				"id": "line",
+				"children":
+				[
+					{ "command": "remove_blank_lines", "caption": "删除多余空行" },
+					{ "command": "remove_extra_blank_lines", "caption": "删除所有空行" },
+				]
+			},
+
+		]
+	},
+	{
 		"id": "view",
 		"children":
 		[

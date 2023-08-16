@@ -104,3 +104,19 @@ class OpenFileWithExternalToolCommand(sublime_plugin.TextCommand):
 class OpenInstalledPackagesCommand(sublime_plugin.WindowCommand):
     def run(self):
         self.window.run_command("open_dir", {"dir": sublime.installed_packages_path()})
+
+
+# 删除所有空行
+class RemoveBlankLinesCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        regions = self.view.find_all(r'\n\s*\n+')
+        for region in reversed(regions):
+            self.view.replace(edit, region, '\n')
+
+
+# 删除多余空行
+class RemoveExtraBlankLinesCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        regions = self.view.find_all(r'\n\s*\n+')
+        for region in reversed(regions):
+            self.view.replace(edit, region, '\n\n')
