@@ -1,0 +1,8 @@
+// These settings override both User and Default settings for the PowershellSyntax syntax
+{
+	"extensions":
+	[
+		"ps1",
+		"psm1",
+	],
+}
