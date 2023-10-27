@@ -120,3 +120,13 @@ class RemoveExtraBlankLinesCommand(sublime_plugin.TextCommand):
         regions = self.view.find_all(r'\n\s*\n+')
         for region in reversed(regions):
             self.view.replace(edit, region, '\n\n')
+
+
+# 复制当前文件内容
+class CopyCurrentFileContentCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        region = sublime.Region(0, self.view.size())
+        content = self.view.substr(region)
+        sublime.set_clipboard('%s' % content)
+        file_path = self.view.file_name() if self.view.file_name() else "untitled"
+        sublime.status_message('Copied file content: "%s"' % file_path)

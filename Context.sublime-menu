@@ -1,6 +1,8 @@
 // Settings in here override those in "Default/Context.sublime-menu",
 // and are overridden in turn by syntax-specific settings.
 [
+	{ "caption": "-", "id": "clipboard" },
+	{ "command": "copy_current_file_content", "caption": "复制当前文件内容" }, //命令由  Mymain.py 定义
 	{ "caption": "-", "id": "file" },
 	{ "command": "toggle_read_only_status", "checkbox": true, "caption": "文件锁定" },
 ]
