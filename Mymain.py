@@ -101,6 +101,7 @@ class OpenFileWithExternalToolCommand(sublime_plugin.TextCommand):
         return True
 
 
+# 浏览 Install Packages 目录
 class OpenInstalledPackagesCommand(sublime_plugin.WindowCommand):
     def run(self):
         self.window.run_command("open_dir", {"dir": sublime.installed_packages_path()})
