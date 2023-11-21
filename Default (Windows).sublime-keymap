@@ -1,0 +1,4 @@
+[
+	{ "keys": ["f4"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+
+]
